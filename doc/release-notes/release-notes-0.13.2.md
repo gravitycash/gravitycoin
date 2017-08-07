@@ -7,11 +7,11 @@ performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/realspencerdupre/gravitycoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://gravitycoin.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 Compatibility
 ==============
@@ -22,7 +22,7 @@ updates will be released anymore. Without security updates, using a bitcoin
 wallet on a XP machine is irresponsible at least.
 
 In addition to that, with 0.12.x there have been varied reports of Bitcoin Core
-randomly crashing on Windows XP. It is [not clear](https://github.com/realspencerdupre/gravitycoin/issues/7681#issuecomment-217439891)
+randomly crashing on Windows XP. It is [not clear](https://github.com/bitcoin/bitcoin/issues/7681#issuecomment-217439891)
 what the source of these crashes is, but it is likely that upstream
 libraries such as Qt are no longer being tested on XP.
 
@@ -111,7 +111,7 @@ git merge commit are mentioned.
 - #8972 `6f86b53` Make warnings label selectable (jonasschnelli) (MarcoFalke)
 - #9185 `6d70a73` Fix coincontrol sort issue (jonasschnelli)
 - #9094 `5f3a12c` Use correct conversion function for boost::path datadir (laanwj)
-- #8908 `4a974b2` Update gravitycoin-qt.desktop (s-matthew-english)
+- #8908 `4a974b2` Update bitcoin-qt.desktop (s-matthew-english)
 - #9190 `dc46b10` Plug many memory leaks (laanwj)
 
 ### Wallet

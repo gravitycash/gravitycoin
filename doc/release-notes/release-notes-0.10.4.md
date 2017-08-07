@@ -8,7 +8,7 @@ recommended to upgrade to this version as soon as possible.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/realspencerdupre/gravitycoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 Upgrading and downgrading
 =========================
@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over /Applications/Bitcoin-Qt (on Mac) or
-gravitycoind/gravitycoin-qt (on Linux).
+bitcoind/bitcoin-qt (on Linux).
 
 Downgrade warning
 ------------------
@@ -68,7 +68,7 @@ specified point in the future.
    blocks if they comply with the BIP65 rules for CLTV.
 
 For more information about the soft-forking change, please see
-<https://github.com/realspencerdupre/gravitycoin/pull/6351>
+<https://github.com/bitcoin/bitcoin/pull/6351>
 
 Graphs showing the progress towards block version 4 adoption may be
 found at the URLs below:
@@ -107,7 +107,7 @@ remain unsafe, this release no longer relies on memory-mapped files for
 the UTXO database, which significantly reduced the frequency of unclean
 shutdowns leading to required reindexes during testing.
 
-For more information, see: <https://github.com/realspencerdupre/gravitycoin/pull/6917>
+For more information, see: <https://github.com/bitcoin/bitcoin/pull/6917>
 
 Other fixes for database corruption on Windows are expected in the
 next major release.

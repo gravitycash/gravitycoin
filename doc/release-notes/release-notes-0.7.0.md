@@ -1,24 +1,24 @@
 Bitcoin version 0.7.0 is now available for download at:
   http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.7.0/
 
-We recommend that everybody running prior versions of gravitycoind/Bitcoin-Qt
+We recommend that everybody running prior versions of bitcoind/Bitcoin-Qt
 upgrade to this release, except for users running Mac OSX 10.5.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/realspencerdupre/gravitycoin/issues
+  https://github.com/bitcoin/bitcoin/issues
 
 Project source code is hosted at github; you can get
 source-only tarballs/zipballs directly from there:
-  https://github.com/realspencerdupre/gravitycoin/tarball/v0.7.0  # .tar.gz
-  https://github.com/realspencerdupre/gravitycoin/zipball/v0.7.0  # .zip
+  https://github.com/bitcoin/bitcoin/tarball/v0.7.0  # .tar.gz
+  https://github.com/bitcoin/bitcoin/zipball/v0.7.0  # .zip
 
 Ubuntu Linux users can use the "Personal Package Archive" (PPA)
 maintained by Matt Corallo to automatically keep 
 bitcoin up-to-date.  Just type
   sudo apt-add-repository ppa:bitcoin/bitcoin
   sudo apt-get update
-in your terminal, then install the gravitycoin-qt package:
-  sudo apt-get install gravitycoin-qt
+in your terminal, then install the bitcoin-qt package:
+  sudo apt-get install bitcoin-qt
 
 
 How to Upgrade
@@ -30,7 +30,7 @@ Code:
 /Applications/Bitcoin-Qt
 (on Mac) or
 Code:
-gravitycoind/gravitycoin-qt
+bitcoind/bitcoin-qt
 (on Linux).
 
 If you were running on Linux with a version that might have been compiled
@@ -119,8 +119,8 @@ Qt GUI
 * Much better translations
 * Override progress bar design on platforms with segmented progress bars to assist with readability
 * Added 'immature balance' display on the overview page
-* (Windows only): enable ASLR and DEP for gravitycoin-qt.exe
-* (Windows only): add meta-data to gravitycoin-qt.exe (e.g. description)
+* (Windows only): enable ASLR and DEP for bitcoin-qt.exe
+* (Windows only): add meta-data to bitcoin-qt.exe (e.g. description)
 
 Internal codebase
 
@@ -131,7 +131,7 @@ Internal codebase
 Miscellaneous
 
 * Reopen debug.log upon SIGHUP
-* Bash programmable completion for gravitycoind(1)
+* Bash programmable completion for bitcoind(1)
 * On supported OS's, each thread is given a useful name
 
 
