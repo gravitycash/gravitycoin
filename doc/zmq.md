@@ -66,7 +66,7 @@ address. The same address can be used in more than one notification.
 
 For instance:
 
-    $ gravitycoind -zmqpubhashtx=tcp://127.0.0.1:28332 \
+    $ gravitycoind -zmqpubhashtx=tcp://127.0.0.1:24461 \
                -zmqpubrawtx=ipc:///tmp/gravitycoind.tx.raw
 
 Each PUB notification has a topic and body, where the header
