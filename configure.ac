@@ -7,8 +7,8 @@ define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, false)
 define(_COPYRIGHT_YEAR, 2017)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Bitcoin Core]])
-AC_INIT([Bitcoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/realspencerdupre/gravitycoin/issues],[bitcoin],[https://gravitycoin.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Gravitycoin Core]])
+AC_INIT([Gravitycoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/realspencerdupre/gravitycoin/issues],[bitcoin],[https://gravitycoin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -17,7 +17,7 @@ AC_CONFIG_MACRO_DIR([build-aux/m4])
 BITCOIN_DAEMON_NAME=gravitycoind
 BITCOIN_GUI_NAME=gravitycoin-qt
 BITCOIN_CLI_NAME=gravitycoin-cli
-BITCOIN_TX_NAME=bitcoin-tx
+BITCOIN_TX_NAME=gravitycoin-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -83,7 +83,7 @@ AC_PATH_TOOL(RANLIB, ranlib)
 AC_PATH_TOOL(STRIP, strip)
 AC_PATH_TOOL(GCOV, gcov)
 AC_PATH_PROG(LCOV, lcov)
-dnl Python 3.x is supported from 3.4 on (see https://github.com/realspencerdupre/gravitycoin/issues/7893)
+dnl Python 3.x is supported from 3.4 on (see https://github.com/bitcoin/bitcoin/issues/7893)
 AC_PATH_PROGS([PYTHON], [python3.6 python3.5 python3.4 python3 python2.7 python2 python])
 AC_PATH_PROG(GENHTML, genhtml)
 AC_PATH_PROG([GIT], [git])
@@ -291,7 +291,7 @@ CPPFLAGS="$CPPFLAGS -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build gravitycoin-cli bitcoin-tx (default=yes)])],
+  [build bitcoin-cli bitcoin-tx (default=yes)])],
   [build_bitcoin_utils=$withval],
   [build_bitcoin_utils=yes])
 
@@ -303,9 +303,9 @@ AC_ARG_WITH([libs],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build gravitycoind daemon (default=yes)])],
-  [build_gravitycoind=$withval],
-  [build_gravitycoind=yes])
+  [build bitcoind daemon (default=yes)])],
+  [build_bitcoind=$withval],
+  [build_bitcoind=yes])
 
 use_pkgconfig=yes
 case $host in
@@ -716,7 +716,7 @@ BITCOIN_QT_INIT
 dnl sets $bitcoin_enable_qt, $bitcoin_enable_qt_test, $bitcoin_enable_qt_dbus
 BITCOIN_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
-if test x$build_bitcoin_utils$build_gravitycoind$bitcoin_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_bitcoin_utils$build_bitcoind$bitcoin_enable_qt$use_tests$use_bench = xnonononono; then
     use_boost=no
 else
     use_boost=yes
@@ -902,7 +902,7 @@ if test x$use_pkgconfig = xyes; then
       if test x$use_qr != xno; then
         BITCOIN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
-      if test x$build_bitcoin_utils$build_gravitycoind$bitcoin_enable_qt$use_tests != xnononono; then
+      if test x$build_bitcoin_utils$build_bitcoind$bitcoin_enable_qt$use_tests != xnononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
         if test x$TARGET_OS != xwindows; then
           PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads],, [AC_MSG_ERROR(libevent_pthreads not found.)])
@@ -927,7 +927,7 @@ else
   AC_CHECK_HEADER([openssl/ssl.h],, AC_MSG_ERROR(libssl headers missing),)
   AC_CHECK_LIB([ssl],         [main],SSL_LIBS=-lssl, AC_MSG_ERROR(libssl missing))
 
-  if test x$build_bitcoin_utils$build_gravitycoind$bitcoin_enable_qt$use_tests != xnononono; then
+  if test x$build_bitcoin_utils$build_bitcoind$bitcoin_enable_qt$use_tests != xnononono; then
     AC_CHECK_HEADER([event2/event.h],, AC_MSG_ERROR(libevent headers missing),)
     AC_CHECK_LIB([event],[main],EVENT_LIBS=-levent,AC_MSG_ERROR(libevent missing))
     if test x$TARGET_OS != xwindows; then
@@ -976,7 +976,7 @@ dnl univalue check
 
 need_bundled_univalue=yes
 
-if test x$build_bitcoin_utils$build_gravitycoind$bitcoin_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_bitcoin_utils$build_bitcoind$bitcoin_enable_qt$use_tests$use_bench = xnonononono; then
   need_bundled_univalue=no
 else
 
@@ -1023,10 +1023,10 @@ AC_SUBST(UNIVALUE_LIBS)
 BITCOIN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
 AC_MSG_CHECKING([whether to build gravitycoind])
-AM_CONDITIONAL([BUILD_BITCOIND], [test x$build_gravitycoind = xyes])
-AC_MSG_RESULT($build_gravitycoind)
+AM_CONDITIONAL([BUILD_BITCOIND], [test x$build_bitcoind = xyes])
+AC_MSG_RESULT($build_bitcoind)
 
-AC_MSG_CHECKING([whether to build utils (gravitycoin-cli bitcoin-tx)])
+AC_MSG_CHECKING([whether to build utils (gravitycoin-cli gravitycoin-tx)])
 AM_CONDITIONAL([BUILD_BITCOIN_UTILS], [test x$build_bitcoin_utils = xyes])
 AC_MSG_RESULT($build_bitcoin_utils)
 
@@ -1138,7 +1138,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "x$use_zmq" = "xyes"])
 
-AC_MSG_CHECKING([whether to build test_bitcoin])
+AC_MSG_CHECKING([whether to build test_gravitycoin])
 if test x$use_tests = xyes; then
   AC_MSG_RESULT([yes])
   BUILD_TEST="yes"
@@ -1154,7 +1154,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_bitcoin_utils$build_bitcoin_libs$build_gravitycoind$bitcoin_enable_qt$use_bench$use_tests = xnononononono; then
+if test x$build_bitcoin_utils$build_bitcoin_libs$build_bitcoind$bitcoin_enable_qt$use_bench$use_tests = xnononononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui --enable-bench or --enable-tests])
 fi
 
