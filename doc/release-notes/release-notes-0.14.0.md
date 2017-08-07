@@ -7,11 +7,11 @@ and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/bitcoin/bitcoin/issues>
+  <https://github.com/realspencerdupre/gravitycoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://bitcoincore.org/en/list/announcements/join/>
+  <https://gravitycoin.org/en/list/announcements/join/>
 
 Compatibility
 ==============
@@ -96,7 +96,7 @@ ZMQ On Windows
 
 Previously the ZeroMQ notification system was unavailable on Windows
 due to various issues with ZMQ. These have been fixed upstream and
-now ZMQ can be used on Windows. Please see [this document](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md) for
+now ZMQ can be used on Windows. Please see [this document](https://github.com/realspencerdupre/gravitycoin/blob/master/doc/zmq.md) for
 help with using ZMQ in general.
 
 Nested RPC Commands in Debug Console
@@ -138,19 +138,19 @@ unhidden by clicking on the progress bar at the bottom of the window.
 Support for JSON-RPC Named Arguments
 ------------------------------------
 
-Commands sent over the JSON-RPC interface and through the `bitcoin-cli` binary
+Commands sent over the JSON-RPC interface and through the `gravitycoin-cli` binary
 can now use named arguments. This follows the [JSON-RPC specification](http://www.jsonrpc.org/specification)
 for passing parameters by-name with an object.
 
-`bitcoin-cli` has been updated to support this by parsing `name=value` arguments
+`gravitycoin-cli` has been updated to support this by parsing `name=value` arguments
 when the `-named` option is given.
 
 Some examples:
 
-    src/bitcoin-cli -named help command="help"
-    src/bitcoin-cli -named getblockhash height=0
-    src/bitcoin-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
-    src/bitcoin-cli -named sendtoaddress address="(snip)" amount="1.0" subtractfeefromamount=true
+    src/gravitycoin-cli -named help command="help"
+    src/gravitycoin-cli -named getblockhash height=0
+    src/gravitycoin-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+    src/gravitycoin-cli -named sendtoaddress address="(snip)" amount="1.0" subtractfeefromamount=true
 
 The order of arguments doesn't matter in this case. Named arguments are also
 useful to leave out arguments that should stay at their default value. The
@@ -242,7 +242,7 @@ Low-level RPC changes
 
  - A new RPC command `getmemoryinfo` has been added which will return information
    about the memory usage of Bitcoin Core. This was added in conjunction with
-   optimizations to memory management. See [Pull #8753](https://github.com/bitcoin/bitcoin/pull/8753)
+   optimizations to memory management. See [Pull #8753](https://github.com/realspencerdupre/gravitycoin/pull/8753)
    for more information.
 
  - A new RPC command `bumpfee` has been added which allows replacing an
@@ -367,7 +367,7 @@ and git merge commit are mentioned.
 - #8421 `b77bb95` httpserver: drop boost dependency (theuni)
 - #8638 `f061415` rest.cpp: change `HTTP_INTERNAL_SERVER_ERROR` to `HTTP_BAD_REQUEST` (djpnewton)
 - #8272 `91990ee` Make the dummy argument to getaddednodeinfo optional (sipa)
-- #8722 `bb843ad` bitcoin-cli: More detailed error reporting (laanwj)
+- #8722 `bb843ad` gravitycoin-cli: More detailed error reporting (laanwj)
 - #6996 `7f71a3c` Add preciousblock RPC (sipa)
 - #8788 `97c7f73` Give RPC commands more information about the RPC request (jonasschnelli)
 - #7948 `5d2c8e5` Augment getblockchaininfo bip9\_softforks data (mruddy)
@@ -718,14 +718,14 @@ and git merge commit are mentioned.
 - #8291 `5cac8b1` util: CopyrightHolders: Check for untranslated substitution (MarcoFalke)
 - #8557 `44691f3` contrib: Rework verifybinaries (MarcoFalke)
 - #8621 `e8ed6eb` contrib: python: Don't use shell=True (MarcoFalke)
-- #8813 `fb24d7e` bitcoind: Daemonize using daemon(3) (laanwj)
+- #8813 `fb24d7e` gravitycoind: Daemonize using daemon(3) (laanwj)
 - #9004 `67728a3` Clarify `listenonion` (unsystemizer)
 - #8674 `bae81b8` tools for analyzing, updating and adding copyright headers in source files (isle2983)
 - #8976 `8c6218a` libconsensus: Add input validation of flags (laanwj)
 - #9112 `46027e8` Avoid ugly exception in log on unknown inv type (laanwj)
 - #8837 `2108911` Allow bitcoin-tx to parse partial transactions (jnewbery)
 - #9204 `74ced54` Clarify CreateTransaction error messages (instagibbs)
-- #9265 `31bcc66` bitcoin-cli: Make error message less confusing (laanwj)
+- #9265 `31bcc66` gravitycoin-cli: Make error message less confusing (laanwj)
 - #9303 `72bf1b3` Update comments in ctaes (sipa)
 - #9417 `c4b7d4f` Do not evaluate hidden LogPrint arguments (sipa)
 - #9506 `593a00c` RFC: Improve style for if indentation (sipa)

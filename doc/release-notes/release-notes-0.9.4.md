@@ -7,7 +7,7 @@ translations. Upgrading to this release is recommended.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/bitcoin/bitcoin/issues
+  https://github.com/realspencerdupre/gravitycoin/issues
 
 How to Upgrade
 ===============
@@ -15,7 +15,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over /Applications/Bitcoin-Qt (on Mac) or
-bitcoind/bitcoin-qt (on Linux).
+gravitycoind/gravitycoin-qt (on Linux).
 
 OpenSSL Warning
 ================

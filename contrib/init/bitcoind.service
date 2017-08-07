@@ -7,9 +7,9 @@ User=bitcoin
 Group=bitcoin
 
 Type=forking
-PIDFile=/var/lib/bitcoind/bitcoind.pid
-ExecStart=/usr/bin/bitcoind -daemon -pid=/var/lib/bitcoind/bitcoind.pid \
--conf=/etc/bitcoin/bitcoin.conf -datadir=/var/lib/bitcoind -disablewallet
+PIDFile=/var/lib/gravitycoind/gravitycoind.pid
+ExecStart=/usr/bin/gravitycoind -daemon -pid=/var/lib/gravitycoind/gravitycoind.pid \
+-conf=/etc/bitcoin/bitcoin.conf -datadir=/var/lib/gravitycoind -disablewallet
 
 Restart=always
 PrivateTmp=true

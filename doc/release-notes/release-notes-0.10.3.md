@@ -7,7 +7,7 @@ updates. It is recommended to upgrade to this version as soon as possible.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/bitcoin/bitcoin/issues>
+  <https://github.com/realspencerdupre/gravitycoin/issues>
 
 Upgrading and downgrading
 =========================
@@ -18,7 +18,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over /Applications/Bitcoin-Qt (on Mac) or
-bitcoind/bitcoin-qt (on Linux).
+gravitycoind/gravitycoin-qt (on Linux).
 
 Downgrade warning
 ------------------
@@ -60,7 +60,7 @@ using distribution provided packages.
 Additionally, upnp has been disabled by default. This may result in a lower
 number of reachable nodes on IPv4, however this prevents future libupnpc
 vulnerabilities from being a structural risk to the network
-(see https://github.com/bitcoin/bitcoin/pull/6795).
+(see https://github.com/realspencerdupre/gravitycoin/pull/6795).
 
 Test for LowS signatures before relaying
 -----------------------------------------
@@ -107,7 +107,7 @@ outrageous memory usage on nodes due to the mempool ballooning. This is a
 temporary measure, bridging the time until a dynamic method for determining
 this fee is merged (which will be in 0.12).
 
-(see https://github.com/bitcoin/bitcoin/pull/6793, as well as the 0.11.0
+(see https://github.com/realspencerdupre/gravitycoin/pull/6793, as well as the 0.11.0
 release notes, in which this value was suggested)
 
 0.10.3 Change log

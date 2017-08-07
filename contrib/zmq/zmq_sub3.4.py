@@ -7,7 +7,7 @@
     ZMQ example using python3's asyncio
 
     Bitcoin should be started with the command line arguments:
-        bitcoind -testnet -daemon \
+        gravitycoind -testnet -daemon \
                 -zmqpubhashblock=tcp://127.0.0.1:28332 \
                 -zmqpubrawtx=tcp://127.0.0.1:28332 \
                 -zmqpubhashtx=tcp://127.0.0.1:28332 \
@@ -23,7 +23,7 @@
     and `await` keywords respectively.
 
     A blocking example using python 2.7 can be obtained from the git history:
-    https://github.com/bitcoin/bitcoin/blob/37a7fe9e440b83e2364d5498931253937abe9294/contrib/zmq/zmq_sub.py
+    https://github.com/realspencerdupre/gravitycoin/blob/37a7fe9e440b83e2364d5498931253937abe9294/contrib/zmq/zmq_sub.py
 """
 
 import binascii

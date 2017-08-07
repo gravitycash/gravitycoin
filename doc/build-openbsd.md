@@ -2,7 +2,7 @@ OpenBSD build guide
 ======================
 (updated for OpenBSD 6.0)
 
-This guide describes how to build bitcoind and command-line utilities on OpenBSD.
+This guide describes how to build gravitycoind and command-line utilities on OpenBSD.
 
 As OpenBSD is most common as a server OS, we will not bother with the GUI.
 
@@ -99,7 +99,7 @@ The standard ulimit restrictions in OpenBSD are very strict:
     data(kbytes)         1572864
 
 This is, unfortunately, no longer enough to compile some `.cpp` files in the project,
-at least with gcc 4.9.3 (see issue https://github.com/bitcoin/bitcoin/issues/6658).
+at least with gcc 4.9.3 (see issue https://github.com/realspencerdupre/gravitycoin/issues/6658).
 If your user is in the `staff` group the limit can be raised with:
 
     ulimit -d 3000000
