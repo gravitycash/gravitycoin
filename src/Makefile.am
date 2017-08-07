@@ -367,7 +367,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # gravitycoind binary #
-gravitycoind_SOURCES = gravitycoind.cpp
+gravitycoind_SOURCES = bitcoind.cpp
 gravitycoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 gravitycoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 gravitycoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
