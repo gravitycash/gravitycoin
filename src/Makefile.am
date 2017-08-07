@@ -70,7 +70,7 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += gravitycoin-cli bitcoin-tx
+  bin_PROGRAMS += gravitycoin-cli gravitycoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -373,7 +373,7 @@ gravitycoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 gravitycoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-gravitycoind_SOURCES += gravitycoind-res.rc
+gravitycoind_SOURCES += bitcoind-res.rc
 endif
 
 gravitycoind_LDADD = \
@@ -393,13 +393,13 @@ gravitycoind_LDADD = \
 gravitycoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # gravitycoin-cli binary #
-bitcoin_cli_SOURCES = gravitycoin-cli.cpp
+bitcoin_cli_SOURCES = bitcoin-cli.cpp
 bitcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 bitcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bitcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-bitcoin_cli_SOURCES += gravitycoin-cli-res.rc
+bitcoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
 bitcoin_cli_LDADD = \
