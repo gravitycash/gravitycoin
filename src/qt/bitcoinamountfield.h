@@ -22,7 +22,7 @@ class BitcoinAmountField: public QWidget
     Q_OBJECT
 
     // ugly hack: for some unknown reason CAmount (instead of qint64) does not work here as expected
-    // discussion: https://github.com/realspencerdupre/gravitycoin/pull/5117
+    // discussion: https://github.com/gravitycash/gravitycoin/pull/5117
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY valueChanged USER true)
 
 public:

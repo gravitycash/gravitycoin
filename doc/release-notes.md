@@ -10,7 +10,7 @@ and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/realspencerdupre/gravitycoin/issues>
+  <https://github.com/gravitycash/gravitycoin/issues>
 
 To receive security and update notifications, please subscribe to:
 

@@ -27,8 +27,8 @@ Build-Depends: debhelper,
  libzmq3-dev
 Standards-Version: 3.9.2
 Homepage: https://gravitycoin.org/
-Vcs-Git: git://github.com/realspencerdupre/gravitycoin.git
-Vcs-Browser: https://github.com/realspencerdupre/gravitycoin
+Vcs-Git: git://github.com/gravitycash/gravitycoin.git
+Vcs-Browser: https://github.com/gravitycash/gravitycoin
 
 Package: gravitycoind
 Architecture: any

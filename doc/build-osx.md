@@ -29,7 +29,7 @@ Build Bitcoin Core
 
 1. Clone the bitcoin source code and cd into `bitcoin`
 
-        git clone https://github.com/realspencerdupre/gravitycoin
+        git clone https://github.com/gravitycash/gravitycoin
         cd bitcoin
 
 2.  Build bitcoin-core:
