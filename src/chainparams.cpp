@@ -124,6 +124,11 @@ public:
 
         assert(consensus.hashGenesisBlock == uint256S("0x000000006374f67d345818dade88935ed1889311fdbd3095b0e541ce8674a5c6"));
         assert(genesis.hashMerkleRoot == uint256S("0x10f43e35bc9602407307c1a03ca85e83c6a371ad8b246ac0e1997a94dfc0729b"));
+        vFixedSeeds.clear();
+        vSeeds.clear();
+        // nodes with support for servicebits filtering should be at the top
+        vSeeds.emplace_back("gravitycashnode.com", false);
+
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         // Comment out all DNS seeds to force use of fixed
@@ -136,7 +141,6 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
-        vSeeds.emplace_back("gravitycashnode.com", true);
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
