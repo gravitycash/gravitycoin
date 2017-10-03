@@ -136,6 +136,7 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+        vSeeds.emplace_back("gravitycashnode.com", true);
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
