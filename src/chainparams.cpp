@@ -81,12 +81,14 @@ public:
         consensus.BIP65Height = 0; // 00000198109eca98d24f1f42edc6c760b769b480976031bf753c25d4be1a3052
         consensus.BIP66Height = 0; // 00000198109eca98d24f1f42edc6c760b769b480976031bf753c25d4be1a3052
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 60 * 60; // two weeks
+        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
+        consensus.nPowTargetForkOneTimespan = 60 * 60; // one hour
+        consensus.nForkOneHeight = 46750;
         consensus.nPowTargetSpacing = 6 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 10; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nMinerConfirmationWindow = 3360; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008

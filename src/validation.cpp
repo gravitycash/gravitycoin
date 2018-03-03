@@ -1034,6 +1034,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 
 bool IsInitialBlockDownload()
 {
+    return false;
     const CChainParams& chainParams = Params();
 
     // Once this function has returned false, it must remain false.
