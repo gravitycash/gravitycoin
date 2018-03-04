@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bitcoin"
-            VALUE "FileDescription",    "gravitycoind (Bitcoin node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Gravitycoin"
+            VALUE "FileDescription",    "gravitycoind (Gravitycoin node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "gravitycoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR

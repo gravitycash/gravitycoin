@@ -4,9 +4,9 @@
 src/bitcoin
 src/gravitycoind
 src/gravitycoin-cli
-src/bitcoin-tx
-src/test/test_bitcoin
-src/test/test_bitcoin_fuzzy
+src/gravitycoin-tx
+src/test/test_gravitycoin
+src/test/test_gravitycoin_fuzzy
 src/qt/test/test_gravitycoin-qt
 
 # autoreconf
