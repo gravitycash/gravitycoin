@@ -11,13 +11,21 @@
 #include "primitives/block.h"
 #include "uint256.h"
 
+int64_t GetForkedDifficultyAdjustmentInterval(const CBlockIndex* pindexLast, const Consensus::Params& params) {
+    int64_t targetTimespan = params.nPowTargetTimespan;
+    if (pindexLast->nHeight >= params.nForkOneHeight) {
+        targetTimespan = params.nPowTargetForkOneTimespan;
+    }
+    return targetTimespan / params.nPowTargetSpacing;
+}
+
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
     assert(pindexLast != NULL);
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
 
     // Only change once per difficulty adjustment interval
-    if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
+    if ((pindexLast->nHeight+1) % GetForkedDifficultyAdjustmentInterval(pindexLast, params) != 0)
     {
         if (params.fPowAllowMinDifficultyBlocks)
         {
@@ -30,7 +38,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             {
                 // Return the last non-special-min-difficulty-rules-block
                 const CBlockIndex* pindex = pindexLast;
-                while (pindex->pprev && pindex->nHeight % params.DifficultyAdjustmentInterval() != 0 && pindex->nBits == nProofOfWorkLimit)
+                while (pindex->pprev && pindex->nHeight % GetForkedDifficultyAdjustmentInterval(pindexLast, params) != 0 && pindex->nBits == nProofOfWorkLimit)
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
@@ -39,7 +47,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     }
 
     // Go back by what we want to be 14 days worth of blocks
-    int nHeightFirst = pindexLast->nHeight - (params.DifficultyAdjustmentInterval()-1);
+    int nHeightFirst = pindexLast->nHeight - (GetForkedDifficultyAdjustmentInterval(pindexLast, params)-1);
     assert(nHeightFirst >= 0);
     const CBlockIndex* pindexFirst = pindexLast->GetAncestor(nHeightFirst);
     assert(pindexFirst);
