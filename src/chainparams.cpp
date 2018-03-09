@@ -83,7 +83,7 @@ public:
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetForkOneTimespan = 60 * 60; // one hour
-        consensus.nForkOneHeight = 46750;
+        consensus.nForkOneHeight = 47039; // end of recalc period 14
         consensus.nPowTargetSpacing = 6 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
