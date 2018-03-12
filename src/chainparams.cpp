@@ -82,7 +82,7 @@ public:
         consensus.BIP66Height = 0; // 00000198109eca98d24f1f42edc6c760b769b480976031bf753c25d4be1a3052
         consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetForkOneTimespan = 60 * 60; // one hour
+        consensus.nPowTargetForkOneTimespan = 6 * 60 * 60; // six hours
         consensus.nForkOneHeight = 47039; // end of recalc period 14
         consensus.nPowTargetSpacing = 6 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
